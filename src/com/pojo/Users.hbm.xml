@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<!--
+	name	指定需要持久化类名的包名
+	table	指定需要映射的表明
+ -->
+	<class name="com.pojo.Users" table="t_Users">
+	<!-- 
+		id必须指明
+		name指定持久化类持久化标识符名称 
+	 -->
+		<id name="id" column="ACCOUNT_ID">
+		<!-- 
+			generator指定id生成策略
+		 -->
+			<generator class="native" />
+		</id>
+		<!-- 
+			property其他属性映射配置
+			name指定持久化类中需要映射的属性名
+			column指定表的列明
+			length指定列的长度
+			type指定列表字段类型
+		 -->
+		<property name="name" column="t_name" />
+		<property name="password" length="6" />
+		<property name="age" length="2" />
+		<property name="birthday" column="t_birthday" />
+
+	</class>
+
+</hibernate-mapping>
